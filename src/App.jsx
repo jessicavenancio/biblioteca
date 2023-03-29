@@ -10,6 +10,9 @@ import { auth } from "./firebase/config";
 import { AuthContext } from "./contexts/AuthContext";
 import { AdicionarLivro } from "./pages/AdicionarLivro/AdicionarLivro";
 import { Livros } from "./pages/Livros/Livros";
+import { EditarLivro } from "./pages/EditarLivro/EditarLivro";
+import { AdicionarEmprestimo } from "./pages/AdicionarEmprestimo/AdicionarEmprestimo";
+import { Emprestimos } from "./pages/Emprestimos/Emprestimos";
 
 export function App() {
     const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -34,8 +37,11 @@ export function App() {
                     <Routes>
                         <Route path="/" element={<Root />}>
                             <Route path="/" element={<Home />} />
-                            <Route path="/livros/adicionar" element={<AdicionarLivro />} />
                             <Route path="/livros" element={<Livros />} />
+                            <Route path="/livros/adicionar" element={<AdicionarLivro />} />
+                            <Route path="/livros/editar/:id" element={<EditarLivro />} />
+                            <Route path="/emprestimos" element={<Emprestimos />} />
+                            <Route path="/emprestimos/adicionar" element={<AdicionarEmprestimo />} />
                         </Route>
                         <Route path="/login" element={<Login />} />
                         <Route path="/cadastro" element={<Cadastro />} />
